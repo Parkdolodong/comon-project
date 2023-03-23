@@ -19,7 +19,7 @@ public class BookController {
 	public ModelAndView main() {
 		return new ModelAndView("book/index");
 	}
-	
+
 	@RequestMapping(value = "/create", method = RequestMethod.GET)
 	public ModelAndView create() {
 		return new ModelAndView("book/create");

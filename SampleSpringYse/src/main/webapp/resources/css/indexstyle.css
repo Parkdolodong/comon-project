@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+hr {
+    background-color: purple;
+    height: 2px;
+}
+
+div.header h1 {
+    color: purple;
+    float: left;
+}
+
+#menubar {
+    position: relative;
+}
+
+.header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.header nav li {
+    float: right;
+    display: block;
+    text-align: center;
+    padding: 30px 10px;
+    text-decoration: none;
+}
+
+.header menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.header menu li {
+    float: left;
+    padding: 14px 12px;
+    font-size: 20px;
+}
+
+.header menu li>a, .dropbtn {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 12px;
+    text-decoration-line: none;
+}
+
+.header menu li>a:link, .header menu li>a:visited {
+    color:black;
+}
+
+.header menu li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 14px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 14px 12px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.box {
+    float: right;
+}
