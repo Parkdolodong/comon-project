@@ -41,7 +41,7 @@
                         <a href="#"><b style="color: black;">HOME</b></a>
                     </li>
                     <li class="dropdown">
-                        <a href="javascript:void(0)" class="dropbtn">국내만화</a>
+                        <a href="javascript:void(0)" class="dropbtn">국내 만화</a>
                         <div class="dropdown-content">
                             <a href="#">순정만화</a>
                             <a href="#">소년만화</a>
@@ -60,7 +60,7 @@
                         </div>
                     </li>
                     <li class="dropdown">
-                        <a href="javascript:void(0)" class="dropbtn">국내만화</a>
+                        <a href="javascript:void(0)" class="dropbtn">미국 만화</a>
                         <div class="dropdown-content">
                             <a href="#">DC 코믹스마블</a>
                             <a href="#">코믹스리터러리</a>

@@ -118,11 +118,11 @@ div.header h1 {
     color: white;
 }
 
-.foot tbody tr:nth-child(odd) {
+.foot > tbody tr:nth-child(odd) {
     background-color: #F7F9FC;
 }
 
-.foot tbody tr:nth-child(even) {
+.foot > tbody tr:nth-child(even) {
     background-color: #F7F9FC;
 }
 
