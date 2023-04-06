@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,12 +15,28 @@ import org.springframework.web.servlet.ModelAndView;
 public class BookController {
 	@Autowired
 	BookService bookService;
-	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public ModelAndView main() {
-		return new ModelAndView("book/index");
-	}
 
+//	@RequestMapping(value = "/", method = RequestMethod.GET)
+//	public ModelAndView main() {
+//		return new ModelAndView("book/index");
+//	}
+
+//	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@GetMapping(value = "/")
+	public ModelAndView mainList(@RequestParam Map<String, Object> map) {
+
+		List<Map<String, Object>> list = this.bookService.list(map);
+
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("data", list);
+		if (map.containsKey("keyword")) {
+			mav.addObject("keyword", map.get("keyword"));
+		}
+		mav.addObject("keyword", map.get("keyword"));
+		mav.setViewName("book/index");
+		return mav;
+	}
+	 
 	@RequestMapping(value = "/create", method = RequestMethod.GET)
 	public ModelAndView create() {
 		return new ModelAndView("book/create");
@@ -33,7 +50,7 @@ public class BookController {
 		if (bookId == null) {
 			mav.setViewName("redirect:/create");
 		} else {
-			mav.setViewName("redirect:/detail?bookId=" + bookId);
+			mav.setViewName("redirect:/");
 		}
 
 		return mav;
@@ -82,7 +99,7 @@ public class BookController {
 
 		boolean isDeleteSuccess = this.bookService.remove(map);
 		if (isDeleteSuccess) {
-			mav.setViewName("redirect:/list");
+			mav.setViewName("redirect:/");
 		} else {
 			String bookId = map.get("bookId").toString();
 			mav.setViewName("redirect:/detail?bookId=" + bookId);
@@ -91,6 +108,7 @@ public class BookController {
 		return mav;
 	}
 
+	
 	@RequestMapping(value = "list")
 	public ModelAndView list(@RequestParam Map<String, Object> map) {
 
@@ -104,4 +122,5 @@ public class BookController {
 		mav.setViewName("/book/list");
 		return mav;
 	}
+
 }
